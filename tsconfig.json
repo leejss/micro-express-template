@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
+    "lib": ["ES5", "ES6"],
     "target": "es6",
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "CommonJS",
     "declaration": false,
     "noLib": false,
+    // --- for use decorator
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    // ----------------------
     "sourceMap": true,
     "pretty": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "noImplicitAny": true,
