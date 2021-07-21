@@ -1,0 +1,1 @@
+yarn add -D @types/cors @types/config @types/debug @types/node @types/express @types/winston @types/cookie-parser typescript @types/body-parser @types/multer

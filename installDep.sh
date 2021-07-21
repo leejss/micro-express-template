@@ -1,0 +1,1 @@
+yarn add express cookie-parser cors reflect-metadata winston routing-controllers config debug rimraf reflect-metadata class-transformer class-validator multer body-parser
