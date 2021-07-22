@@ -1,27 +1,18 @@
-import { Connection, createConnection } from "typeorm";
-import { logger } from "../common/logger";
-import { Person } from "../entity/Person";
+import mongoose from "mongoose";
 
 export class DbConfig {
-  public connection: Connection;
-  constructor() {
-    this.connect();
-  }
+  constructor() {}
 
-  private async connect() {
+  public async connect() {
     try {
-      this.connection = await createConnection({
-        type: "mongodb",
-        host: "localhost",
-        port: 27017,
-        database: "testdb",
-        entities: [Person],
-        synchronize: true,
+      await mongoose.connect("mongodb://localhost:27017/testdb", {
+        useFindAndModify: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
       });
-      logger.info(`Mongodb database connected`);
-      console.log(this.connection.isConnected);
+      console.info("Database has been connected");
     } catch (error) {
-      logger.error(error);
+      console.error("Database connection error", error);
     }
   }
 }
